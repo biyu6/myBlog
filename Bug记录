@@ -1,0 +1,7 @@
+1.scrollView子控件宽度变小的问题：看看子控件的约束是不是设置的left、right；将right改为width
+2.崩溃提示： unrecognized selector sent to instance  	
+		可能的原因：把NSNumber类型的赋给字符串了自己还不知情；解决办法：改过来，主要查看：plist文件
+3.cellForRowAtIndexPath 中的indexPath.row 从2开始 ： 看看heightForRowAtIndexPath 中的行高有没有可能为0 ，若为0 给一个非零的默认值
+4.计算label或者字符串的高度/宽度 不准确，看一下CGSizeMake中给的最大宽高是不是有变动，给一个没有变动的最大宽高
+5.cell中的子控件没有显示完全，看一下有没有上一条出现的情况
+4.自定义tabbar的时候，中间的加号按钮左边点击没反应；尝试：将创建加号按钮的代码从initWithFrame移到layoutSubviews中（参考易获客）
