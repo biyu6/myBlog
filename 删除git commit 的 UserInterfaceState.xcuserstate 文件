@@ -1,0 +1,22 @@
+1.首先找到UserInterfaceState.xcuserstate文件的路径:
+  1.1.打开项目,找到"项目名.xcworkspace"文件
+  1.2.右键-->显示包内容-->进入"xcuserdata" -->进入"用户名.xcuserdatad"-->"UserInterfaceState.xcuserstate" 拿到路径
+
+2.退出Xcode,打开命令行,进入项目目录下
+
+3.命令行输入 git rm --cached UserInterfaceState.xcuserstate文件的路径
+
+4.命令行提交:  git commit -m "删除讨厌的文件"
+
+5.在项目文件夹下,找到.gitignore文件并打开,在其中添加以下内容:
+*.xcuserstate 
+project.xcworkspace 
+xcuserdata 
+UserInterfaceState.xcuserstate 
+project.xcworkspace/ 
+xcuserdata/ 
+UserInterface.xcuserstate  
+
+6.做commit 和 push 操作
+
+7.搞定
