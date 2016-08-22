@@ -1,0 +1,8 @@
+- (void)textViewDidChange:(UITextView *)textView {
+    // 限制输入文本长度===常常由于联想输入的缘故，会有很多字符一起输入
+   if (textView.text.length > 50 && textView.markedTextRange == nil) {
+       UIAlertView * alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"字符个数不能大于50" delegate:nil cancelButtonTitle:@"返回" otherButtonTitles: nil];
+       [alert show];
+       textView.text = [textView.text substringToIndex:50];
+    }
+}
