@@ -1,5 +1,0 @@
-- (void)reTextFieldDidChange:(UITextField *)textField{
-    DLog(@"输入的文字为===========%@",textField.text);
-//
-    textField.text = [textField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-}

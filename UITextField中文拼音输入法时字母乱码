@@ -1,0 +1,15 @@
+[nameTF addTarget:self action:@selector(reTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
+- (void)reTextFieldDidChange:(UITextField *)textField{//输入文本时调用
+    UITextRange *selectedRange = [textField markedTextRange];
+    NSString * newText = [textField textInRange:selectedRange];
+    //获取高亮部分
+    if(newText.length>0) return;
+
+//不允许输入空格
+    textField.text = [textField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+    if (textField == _nameTF) {//文本框最大长度
+        textField.text = textField.text.length > 16 ? [textField.text substringToIndex:16] : textField.text;
+    }
+}
